@@ -1,5 +1,7 @@
 Serverless and Databaseless key-value database API
 
+-For when you only need a little bit of database-
+
 API Gateway with Lambda Proxy Integration <=> Lambda/node.js <=> S3
 
 Shortcut syntax for insert and retrieve:
