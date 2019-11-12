@@ -9,7 +9,7 @@ exports.handler = async (event) => {
     let value = '';
     
     const bucketName = process.env.bucketName; 
-    const collectionName = process.env.collectionName;
+    const folderName = process.env.folderName;
     
     let responseBody = {};
     responseBody.messages = [];
@@ -59,7 +59,7 @@ exports.handler = async (event) => {
         if (key === "$rm")  // Delete
         {
             ++count;
-            key = collectionName + "/" + value;
+            key = folderName + "/" + value;
             
             const params = 
             {
@@ -84,7 +84,7 @@ exports.handler = async (event) => {
         if (key === "$ls")  // List keys
         {
             ++count;
-            const prefix = collectionName + "/";
+            const prefix = folderName + "/";
             const params = 
             {
                 Bucket: bucketName, 
@@ -102,7 +102,7 @@ exports.handler = async (event) => {
                 // let count = 1;
                 contents.forEach(function (content) 
                 {
-                    responseBody['$ls'].push(content.Key.replace(new RegExp("^" + collectionName + '/'), '')); // remove collectionName
+                    responseBody['$ls'].push(content.Key.replace(new RegExp("^" + folderName + '/'), '')); // remove folderName
                     // ++count;
                 });
             } 
@@ -124,7 +124,7 @@ exports.handler = async (event) => {
                 responseBody.errors.push(res);
             }
             
-            const prefixKey = collectionName + "/" + key;
+            const prefixKey = folderName + "/" + key;
             
             const params = 
             { 
@@ -151,7 +151,7 @@ exports.handler = async (event) => {
         if (key != '' && value === '') // Get
         {
             ++count;
-            const prefixKey = collectionName + "/" + key;
+            const prefixKey = folderName + "/" + key;
             const params = 
             { 
                 Bucket: bucketName, 

@@ -75,7 +75,7 @@ Note: Todo: Write Terraform to do this
 	a. Paste the dbless code into the inline editor (change the allowed IP or make available on a private VPC) -> Save
 	b. Set Lambda environment variables:
 		bucketName		
-		collectionName
+		folderName
 
 4. Set up the Lambda Proxy Integration
 
