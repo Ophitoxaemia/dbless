@@ -109,3 +109,12 @@ Note: Todo: Write Terraform to do this
 	c. Select Deploy
 
 	The Invoke URL displayed is the url of the API, this is the database URL to replace the endpoint URL in the examples above
+
+Benchmarking
+------------
+	50% of requests completed in under 35ms 
+	ab run from an EC2 instance in the same region
+
+License
+-------
+	See license.txt
