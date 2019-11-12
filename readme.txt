@@ -1,6 +1,6 @@
 Serverless and Databaseless key-value database API
 
-API Gateway with Lambda Proxy Integration <=> Lambda <=> S3
+API Gateway with Lambda Proxy Integration <=> Lambda/node.js <=> S3
 
 Shortcut syntax for insert and retrieve:
 	Retrieve: { "name2" : ""}
