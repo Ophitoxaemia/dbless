@@ -36,39 +36,43 @@ Note: Todo: Write Terraform to do this
 	   (Select type of trusted entity) -> AWS service -> Lambda -> Next: Permissions
 	b. Create Policy -> JSON -> paste:
 
-	{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "logs:CreateLogStream",
-                "logs:PutLogEvents"
-            ],
-            "Resource": "arn:aws:logs:*:*:*"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::YourBucketName",
-                "arn:aws:s3:::YourBucketName/*",
-                "arn:aws:s3:*:YourAWSAccountNumber:job/*"
-            ]
-        }
-    	]
-	}
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+    "Sid": "VisualEditor0",
+    "Effect": "Allow",
+    "Action": [
+	"logs:CreateLogStream",
+	"logs:PutLogEvents"
+    ],
+    "Resource": "arn:aws:logs:*:*:*"
+},
+{
+    "Sid": "VisualEditor1",
+    "Effect": "Allow",
+    "Action": "s3:*",
+    "Resource": [
+	"arn:aws:s3:::YourBucketName",
+	"arn:aws:s3:::YourBucketName/*",
+	"arn:aws:s3:*:YourAWSAccountNumber:job/*"
+    ]
+}
+]
+}
 	c. -> Review policy
-	d. Fill in Name (this will be used in the Lambda)
+	d. Fill in Name (this will be used in the Lambda) e.g. dbless-policy
 	e. -> Create policy
+	
+1.5 Create role
+	a. Create a role and attach the policy you just created
+	b. Name it, e.g. dbless-role
 
 2. Create Lambda
 	a. -> Lambda -> Functions -> Create function
 	b. -> Author from scratch
 	c. fill in Function name 
-	d. Permissions -> Choose or create an execution role
+	d. Permissions -> Choose the execution role you just created
 	e. Execution role -> Use an existing role
 	f. choose role you created above from dropdown
 	g. -> Create function
