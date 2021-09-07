@@ -114,12 +114,14 @@ Note: Todo: Write Terraform to do this
 	b. Stage name test
 	c. Select Deploy
 
-	The Invoke URL displayed is the url of the API, this is the database URL to replace the endpoint URL in the examples above
+	The Invoke URL displayed is the url of the API, this is the database URL to replace the endpoint URL in the examples above. Note: the invoke url does not include the stage name, you will have to add it. 
 
 Benchmarking
 ------------
 	50% of requests completed in under 35ms 
 	ab run from an EC2 instance in the same region
+	
+	Might be faster as an HTTP endpoint instead of REST
 
 License
 -------
