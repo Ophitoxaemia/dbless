@@ -1,5 +1,7 @@
 Serverless and Databaseless key-value database API
 
+There was a breaking change in node between v 14.x and 18.x, so you can't use the latest Lambda node version right now
+
 -For when you only need a little bit of database-
 
 API Gateway with Lambda Proxy Integration <=> Lambda/node.js <=> S3
