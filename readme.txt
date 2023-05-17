@@ -117,6 +117,12 @@ Note: Todo: Write Terraform to do this
 	c. Select Deploy
 
 	The Invoke URL displayed is the url of the API, this is the database URL to replace the endpoint URL in the examples above. Note: the invoke url does not include the stage name, you will have to add it. 
+	
+== Calling from a browser ==
+
+You can use "await fetch" to call from a web app.
+
+You'll need to configure CORS on the API Gateway:
 
 Benchmarking
 ------------
