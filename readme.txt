@@ -11,7 +11,7 @@ Shortcut syntax for insert and retrieve:
 	Insert: { "name2" : "New name"}
 
 Commands:
-	List keys: { "$ls" : ""}
+	List keys: { "$ls" : "<optional foldername>"} 
 	Remove key: { "$rm" : "keyname"}
 
 Multiple keys are executed in order:
@@ -27,6 +27,13 @@ Examples: (Blue part is the Invoke URL below)
 	curl 'https://0v198999cc.execute-api.us-east-1.amazonaws.com/YourEndpoint' -H 'content-type: application/json' -d '{ "$ls" : "", "name" : ""}'
 
 		{"$ls":["name","name2","name3","someid","someid2"],"name":"James"}
+		
+			
+== Calling from a browser ==
+
+You can use "await fetch" to call from a web app.
+
+You'll need to configure CORS on the API Gateway.
 
 Installation
 ------------
@@ -117,12 +124,6 @@ Note: Todo: Write Terraform to do this
 	c. Select Deploy
 
 	The Invoke URL displayed is the url of the API, this is the database URL to replace the endpoint URL in the examples above. Note: the invoke url does not include the stage name, you will have to add it. 
-	
-== Calling from a browser ==
-
-You can use "await fetch" to call from a web app.
-
-You'll need to configure CORS on the API Gateway:
 
 Benchmarking
 ------------
